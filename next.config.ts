@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  devIndicators: false,
+  images: {
+    // News images can come from any publisher, plus TMDB posters and the
+    // mock social API's avatar hosts.
+    remotePatterns: [
+      { protocol: "https", hostname: "**" },
+    ],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
